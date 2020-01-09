@@ -16,6 +16,8 @@ using namespace std;
 
 #ifdef DEBUG
 #define ASSERT(x) assert(x)
+#else
+#define ASSERT(x)
 #endif
 
 template <typename T>
@@ -222,6 +224,7 @@ class tree
 private:
     node<T>* root;
 public:
+    
     tree(void)
     :root(nullptr)
     {}
