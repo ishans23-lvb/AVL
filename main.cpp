@@ -12,20 +12,22 @@
 using namespace std;
 
 
+void test1(void);
 
 int main(int argc, const char * argv[])
 {
-    tree<int> t;
-    
-    t.insert(7);
-    t.insert(10);
-    t.insert(11);
-    t.insert(8);
-    t.insert(6);
-    t.insert(5);
-    
-    t.print();
-    
+    test1();
     
     return 0;
+}
+
+void test1(void)
+{
+    tree<int> t;
+    for(int i=0;i<1000;i++)
+    {
+        int rn=rand();
+        t.insert(rn);
+        t.print();
+    }
 }

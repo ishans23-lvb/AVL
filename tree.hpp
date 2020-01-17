@@ -168,6 +168,17 @@ node<T>* avl_insert(node<T>* root,node<T>* const nn)
 }
 
 template<typename T>
+node<T>* avl_find(const node<T>* root,const T& x)
+{
+    if(!root || root->x==x)
+        return root;
+    if(x<root->x)
+        return avl_find(root->left,x);
+    else
+        return avl_find(root->right,x);
+}
+
+template<typename T>
 bool bst_validate(const node<T>* const root)
 {
     if(!root)
@@ -229,7 +240,7 @@ public:
     :root(nullptr)
     {}
     
-    int insert(const int x)
+    int insert(const T& x)
     {
         ASSERT(validate());
         node<T>* nn=new node<T>(x);
@@ -237,6 +248,8 @@ public:
         ASSERT(validate());
         return 0;
     }
+    
+    
     
     void print(void) const
     {
